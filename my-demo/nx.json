@@ -28,13 +28,13 @@
       "tags": ["shared", "nav"]
     },
     "angular-lib-lib1": {
-      "tags": ["shared", "nav"]
-    },
-    "angular-lib-lib2": {
-      "tags": ["shared", "nav"]
+      "tags": ["angular"]
     },
     "nx-lib-lib3": {
-      "tags": ["shared", "nav"]
+      "tags": ["nx"]
+    },
+    "angular-lib-lib2": {
+      "tags": []
     }
   }
 }

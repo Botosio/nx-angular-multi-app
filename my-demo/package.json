@@ -25,7 +25,10 @@
     "dep-graph": "nx dep-graph",
     "workspace-schematic": "nx workspace-schematic",
     "help": "nx help",
-    "postinstall": "node ./decorate-angular-cli.js"
+    "postinstall": "node ./decorate-angular-cli.js",
+    "start-my-demo": "ng serve my-demo",
+    "start-nx-demo": "ng serve nx-demo",
+    "start-angular-demo": "ng serve angular-demo"
   },
   "private": true,
   "dependencies": {

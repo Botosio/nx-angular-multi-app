@@ -64,11 +64,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "my-demo:build"
+            "browserTarget": "my-demo:build",
+            "port": 4200
           },
           "configurations": {
             "production": {
-              "browserTarget": "my-demo:build:production"
+              "browserTarget": "my-demo:build:production",
+              "port": 4200
             }
           }
         },
@@ -191,11 +193,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nx-demo:build"
+            "browserTarget": "nx-demo:build",
+            "port": 4201
           },
           "configurations": {
             "production": {
-              "browserTarget": "nx-demo:build:production"
+              "browserTarget": "nx-demo:build:production",
+              "port": 4201
             }
           }
         },
@@ -306,11 +310,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-demo:build"
+            "browserTarget": "angular-demo:build",
+            "port": 4202
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-demo:build:production"
+              "browserTarget": "angular-demo:build:production",
+              "port": 4202
             }
           }
         },
@@ -366,18 +372,6 @@
       "sourceRoot": "libs/shared/nav/src",
       "prefix": "demo",
       "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/shared/nav/tsconfig.lib.json",
-            "project": "libs/shared/nav/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/shared/nav/tsconfig.lib.prod.json"
-            }
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -408,18 +402,6 @@
       "sourceRoot": "libs/angular-lib/lib1/src",
       "prefix": "demo",
       "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/angular-lib/lib1/tsconfig.lib.json",
-            "project": "libs/angular-lib/lib1/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/angular-lib/lib1/tsconfig.lib.prod.json"
-            }
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -444,66 +426,12 @@
         }
       }
     },
-    "angular-lib-lib2": {
-      "projectType": "library",
-      "root": "libs/angular-lib/lib2",
-      "sourceRoot": "libs/angular-lib/lib2/src",
-      "prefix": "demo",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/angular-lib/lib2/tsconfig.lib.json",
-            "project": "libs/angular-lib/lib2/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/angular-lib/lib2/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/angular-lib/lib2/tsconfig.lib.json",
-              "libs/angular-lib/lib2/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/angular-lib/lib2/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/angular-lib/lib2/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "nx-lib-lib3": {
       "projectType": "library",
       "root": "libs/nx-lib/lib3",
       "sourceRoot": "libs/nx-lib/lib3/src",
       "prefix": "demo",
       "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/nx-lib/lib3/tsconfig.lib.json",
-            "project": "libs/nx-lib/lib3/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/nx-lib/lib3/tsconfig.lib.prod.json"
-            }
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -518,6 +446,36 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/nx-lib/lib3/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "angular-lib-lib2": {
+      "projectType": "library",
+      "root": "libs/angular-lib/lib2",
+      "sourceRoot": "libs/angular-lib/lib2/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-lib/lib2/tsconfig.lib.json",
+              "libs/angular-lib/lib2/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-lib/lib2/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-lib/lib2/jest.config.js",
             "passWithNoTests": true
           }
         }
