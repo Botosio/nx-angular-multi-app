@@ -17,6 +17,12 @@
     },
     "my-demo-e2e": {
       "tags": []
+    },
+    "nx-demo": {
+      "tags": []
+    },
+    "angular-demo": {
+      "tags": []
     }
   }
 }
