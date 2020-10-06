@@ -23,6 +23,18 @@
     },
     "angular-demo": {
       "tags": []
+    },
+    "shared-nav": {
+      "tags": ["shared", "nav"]
+    },
+    "angular-lib-lib1": {
+      "tags": ["shared", "nav"]
+    },
+    "angular-lib-lib2": {
+      "tags": ["shared", "nav"]
+    },
+    "nx-lib-lib3": {
+      "tags": ["shared", "nav"]
     }
   }
 }

@@ -27,9 +27,7 @@
               "apps/my-demo/src/favicon.ico",
               "apps/my-demo/src/assets"
             ],
-            "styles": [
-              "apps/my-demo/src/styles.sass"
-            ],
+            "styles": ["apps/my-demo/src/styles.sass"],
             "scripts": []
           },
           "configurations": {
@@ -91,9 +89,7 @@
               "apps/my-demo/src/favicon.ico",
               "apps/my-demo/src/assets"
             ],
-            "styles": [
-              "apps/my-demo/src/styles.sass"
-            ],
+            "styles": ["apps/my-demo/src/styles.sass"],
             "scripts": []
           }
         },
@@ -104,9 +100,7 @@
               "apps/my-demo/tsconfig.app.json",
               "apps/my-demo/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -131,9 +125,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/my-demo-e2e/tsconfig.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -162,9 +154,7 @@
               "apps/nx-demo/src/favicon.ico",
               "apps/nx-demo/src/assets"
             ],
-            "styles": [
-              "apps/nx-demo/src/styles.sass"
-            ],
+            "styles": ["apps/nx-demo/src/styles.sass"],
             "scripts": []
           },
           "configurations": {
@@ -226,9 +216,7 @@
               "apps/nx-demo/src/favicon.ico",
               "apps/nx-demo/src/assets"
             ],
-            "styles": [
-              "apps/nx-demo/src/styles.sass"
-            ],
+            "styles": ["apps/nx-demo/src/styles.sass"],
             "scripts": []
           }
         },
@@ -240,9 +228,7 @@
               "apps/nx-demo/tsconfig.spec.json",
               "apps/nx-demo/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -283,9 +269,7 @@
               "apps/angular-demo/src/favicon.ico",
               "apps/angular-demo/src/assets"
             ],
-            "styles": [
-              "apps/angular-demo/src/styles.sass"
-            ],
+            "styles": ["apps/angular-demo/src/styles.sass"],
             "scripts": []
           },
           "configurations": {
@@ -347,9 +331,7 @@
               "apps/angular-demo/src/favicon.ico",
               "apps/angular-demo/src/assets"
             ],
-            "styles": [
-              "apps/angular-demo/src/styles.sass"
-            ],
+            "styles": ["apps/angular-demo/src/styles.sass"],
             "scripts": []
           }
         },
@@ -361,9 +343,7 @@
               "apps/angular-demo/tsconfig.spec.json",
               "apps/angular-demo/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -379,9 +359,183 @@
           }
         }
       }
-    }},
+    },
+    "shared-nav": {
+      "projectType": "library",
+      "root": "libs/shared/nav",
+      "sourceRoot": "libs/shared/nav/src",
+      "prefix": "demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/shared/nav/tsconfig.lib.json",
+            "project": "libs/shared/nav/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/nav/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/nav/tsconfig.lib.json",
+              "libs/shared/nav/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/nav/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/nav/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "angular-lib-lib1": {
+      "projectType": "library",
+      "root": "libs/angular-lib/lib1",
+      "sourceRoot": "libs/angular-lib/lib1/src",
+      "prefix": "demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/angular-lib/lib1/tsconfig.lib.json",
+            "project": "libs/angular-lib/lib1/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/angular-lib/lib1/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-lib/lib1/tsconfig.lib.json",
+              "libs/angular-lib/lib1/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-lib/lib1/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-lib/lib1/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "angular-lib-lib2": {
+      "projectType": "library",
+      "root": "libs/angular-lib/lib2",
+      "sourceRoot": "libs/angular-lib/lib2/src",
+      "prefix": "demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/angular-lib/lib2/tsconfig.lib.json",
+            "project": "libs/angular-lib/lib2/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/angular-lib/lib2/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-lib/lib2/tsconfig.lib.json",
+              "libs/angular-lib/lib2/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-lib/lib2/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-lib/lib2/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "nx-lib-lib3": {
+      "projectType": "library",
+      "root": "libs/nx-lib/lib3",
+      "sourceRoot": "libs/nx-lib/lib3/src",
+      "prefix": "demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/nx-lib/lib3/tsconfig.lib.json",
+            "project": "libs/nx-lib/lib3/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/nx-lib/lib3/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nx-lib/lib3/tsconfig.lib.json",
+              "libs/nx-lib/lib3/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/nx-lib/lib3/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nx-lib/lib3/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    }
+  },
   "defaultProject": "my-demo",
   "cli": {
     "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:library": {
+      "strict": true
+    }
   }
 }
