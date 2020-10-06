@@ -5,5 +5,6 @@ import { NxLib3Component } from './nx-lib3/nx-lib3.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [NxLib3Component],
+  exports: [NxLib3Component],
 })
 export class NxLibLib3Module {}
