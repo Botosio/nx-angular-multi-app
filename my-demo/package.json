@@ -26,6 +26,7 @@
     "workspace-schematic": "nx workspace-schematic",
     "help": "nx help",
     "postinstall": "node ./decorate-angular-cli.js",
+    "start-all-apps": "npm run start-my-demo && npm run start-nx-demo && npm run start-angular-demo",
     "start-my-demo": "ng serve my-demo",
     "start-nx-demo": "ng serve nx-demo",
     "start-angular-demo": "ng serve angular-demo"

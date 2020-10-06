@@ -1,3 +1,25 @@
 {
-  "extends": "./tsconfig.json"
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "@demo/*": ["libs/*"],
+      "@demo/shared/nav": ["libs/shared/nav/src/index.ts"],
+      "@demo/angular-lib/lib1": ["libs/angular-lib/lib1/src/index.ts"],
+      "@demo/nx-lib/lib3": ["libs/nx-lib/lib3/src/index.ts"],
+      "@demo/angular-lib/lib2": ["libs/angular-lib/lib2/src/index.ts"]
+    }
+  },
+  "rootDir": "."
 }
