@@ -18,7 +18,8 @@
       "@demo/shared/nav": ["libs/shared/nav/src/index.ts"],
       "@demo/angular-lib/lib1": ["libs/angular-lib/lib1/src/index.ts"],
       "@demo/nx-lib/lib3": ["libs/nx-lib/lib3/src/index.ts"],
-      "@demo/angular-lib/lib2": ["libs/angular-lib/lib2/src/index.ts"]
+      "@demo/angular-lib/lib2": ["libs/angular-lib/lib2/src/index.ts"],
+      "@demo/foobar": ["libs/nx-lib/foobar/src/index.ts"]
     }
   },
   "rootDir": "."

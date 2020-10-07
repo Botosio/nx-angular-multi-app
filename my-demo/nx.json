@@ -35,6 +35,9 @@
     },
     "angular-lib-lib2": {
       "tags": []
+    },
+    "nx-lib-foobar": {
+      "tags": []
     }
   },
   "tasksRunnerOptions": {
