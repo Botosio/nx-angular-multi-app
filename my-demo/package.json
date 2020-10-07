@@ -29,7 +29,8 @@
     "start-all-apps": "npm run start-my-demo && npm run start-nx-demo && npm run start-angular-demo",
     "start-my-demo": "ng serve my-demo",
     "start-nx-demo": "ng serve nx-demo",
-    "start-angular-demo": "ng serve angular-demo"
+    "start-angular-demo": "ng serve angular-demo",
+    "build-all-apps": "nx run my-demo:build && nx run nx-demo:build && nx run angular-demo:build"
   },
   "private": true,
   "dependencies": {
