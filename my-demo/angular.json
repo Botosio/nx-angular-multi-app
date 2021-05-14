@@ -22,13 +22,18 @@
             "main": "apps/my-demo/src/main.ts",
             "polyfills": "apps/my-demo/src/polyfills.ts",
             "tsConfig": "apps/my-demo/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/my-demo/src/favicon.ico",
               "apps/my-demo/src/assets"
             ],
             "styles": ["apps/my-demo/src/styles.sass"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -150,13 +155,18 @@
             "main": "apps/nx-demo/src/main.ts",
             "polyfills": "apps/nx-demo/src/polyfills.ts",
             "tsConfig": "apps/nx-demo/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/nx-demo/src/favicon.ico",
               "apps/nx-demo/src/assets"
             ],
             "styles": ["apps/nx-demo/src/styles.sass"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -266,13 +276,18 @@
             "main": "apps/angular-demo/src/main.ts",
             "polyfills": "apps/angular-demo/src/polyfills.ts",
             "tsConfig": "apps/angular-demo/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "apps/angular-demo/src/favicon.ico",
               "apps/angular-demo/src/assets"
             ],
             "styles": ["apps/angular-demo/src/styles.sass"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
