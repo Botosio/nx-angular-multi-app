@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'angular-demo',
-    loadChildren: () => import('angularDemo/Module').then(m => m.AppModule)
+    path: 'angular',
+    loadChildren: () => import('angularDemo/Module').then(m => m.LazyLoadedModuleModule)
 },
 ];
 

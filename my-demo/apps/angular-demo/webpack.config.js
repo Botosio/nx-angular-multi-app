@@ -27,7 +27,7 @@ module.exports = {
         name: "angularDemo",
         filename: "remoteEntry.js",
         exposes: {
-            './Module': './apps/angular-demo/src/app/app.module.ts',
+            './Module': './apps/angular-demo/src/app/lazy-loaded-module/lazy-loaded-module.module.ts',
         },
 
         // For hosts (please adjust)
