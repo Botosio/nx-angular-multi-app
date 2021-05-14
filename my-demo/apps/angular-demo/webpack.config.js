@@ -14,7 +14,7 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: false
-  },   
+  },
   resolve: {
     alias: {
       ...sharedMappings.getAliases(),
@@ -22,14 +22,14 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      
+
         // For remotes (please adjust)
-        // name: "angularDemo",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './apps/angular-demo/src/app/app.component.ts',
-        // },        
-        
+        name: "angularDemo",
+        filename: "remoteEntry.js",
+        exposes: {
+            './Module': './apps/angular-demo/src/app/app.module.ts',
+        },
+
         // For hosts (please adjust)
         // remotes: {
         //     "myDemo": "myDemo@http://localhost:5000/remoteEntry.js",
@@ -38,14 +38,14 @@ module.exports = {
         // },
 
         shared: {
-          "@angular/core": { singleton: true, strictVersion: true }, 
-          "@angular/common": { singleton: true, strictVersion: true }, 
-          "@angular/common/http": { singleton: true, strictVersion: true }, 
+          "@angular/core": { singleton: true, strictVersion: true },
+          "@angular/common": { singleton: true, strictVersion: true },
+          "@angular/common/http": { singleton: true, strictVersion: true },
           "@angular/router": { singleton: true, strictVersion: true },
 
           ...sharedMappings.getDescriptors()
         }
-        
+
     }),
     sharedMappings.getPlugin()
   ],
