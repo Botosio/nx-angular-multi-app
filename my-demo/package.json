@@ -31,7 +31,8 @@
     "start-nx-demo": "ng serve nx-demo",
     "start-angular-demo": "ng serve angular-demo",
     "build-all-apps": "nx run my-demo:build && nx run nx-demo:build && nx run angular-demo:build",
-    "nx-build-all-apps-prod": "nx run-many --target=build --projects=my-demo,nx-demo,angular-demo --configuration=production --parallel"
+    "nx-build-all-apps-prod": "nx run-many --target=build --projects=my-demo,nx-demo,angular-demo --configuration=production --parallel",
+    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
   "dependencies": {

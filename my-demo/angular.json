@@ -15,7 +15,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/apps/my-demo",
             "index": "apps/my-demo/src/index.html",
@@ -26,14 +26,18 @@
               "apps/my-demo/src/favicon.ico",
               "apps/my-demo/src/assets"
             ],
-            "styles": ["apps/my-demo/src/styles.sass"],
+            "styles": [
+              "apps/my-demo/src/styles.sass"
+            ],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "extraWebpackConfig": "apps/my-demo/webpack.config.js",
+            "commonChunk": false
           },
           "configurations": {
             "production": {
@@ -61,20 +65,23 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "extraWebpackConfig": "apps/my-demo/webpack.prod.config.js"
             }
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "options": {
             "browserTarget": "my-demo:build",
-            "port": 4200
+            "port": 5000,
+            "extraWebpackConfig": "apps/my-demo/webpack.config.js"
           },
           "configurations": {
             "production": {
               "browserTarget": "my-demo:build:production",
-              "port": 4200
+              "port": 4200,
+              "extraWebpackConfig": "apps/my-demo/webpack.prod.config.js"
             }
           }
         },
@@ -85,7 +92,7 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "main": "apps/my-demo/src/test.ts",
             "polyfills": "apps/my-demo/src/polyfills.ts",
@@ -95,8 +102,11 @@
               "apps/my-demo/src/favicon.ico",
               "apps/my-demo/src/assets"
             ],
-            "styles": ["apps/my-demo/src/styles.sass"],
-            "scripts": []
+            "styles": [
+              "apps/my-demo/src/styles.sass"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "apps/my-demo/webpack.config.js"
           }
         },
         "lint": {
@@ -106,7 +116,9 @@
               "apps/my-demo/tsconfig.app.json",
               "apps/my-demo/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -131,7 +143,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/my-demo-e2e/tsconfig.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -159,7 +173,9 @@
               "apps/nx-demo/src/favicon.ico",
               "apps/nx-demo/src/assets"
             ],
-            "styles": ["apps/nx-demo/src/styles.sass"],
+            "styles": [
+              "apps/nx-demo/src/styles.sass"
+            ],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -228,7 +244,9 @@
               "apps/nx-demo/src/favicon.ico",
               "apps/nx-demo/src/assets"
             ],
-            "styles": ["apps/nx-demo/src/styles.sass"],
+            "styles": [
+              "apps/nx-demo/src/styles.sass"
+            ],
             "scripts": []
           }
         },
@@ -240,7 +258,9 @@
               "apps/nx-demo/tsconfig.spec.json",
               "apps/nx-demo/e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -280,7 +300,9 @@
               "apps/angular-demo/src/favicon.ico",
               "apps/angular-demo/src/assets"
             ],
-            "styles": ["apps/angular-demo/src/styles.sass"],
+            "styles": [
+              "apps/angular-demo/src/styles.sass"
+            ],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -349,7 +371,9 @@
               "apps/angular-demo/src/favicon.ico",
               "apps/angular-demo/src/assets"
             ],
-            "styles": ["apps/angular-demo/src/styles.sass"],
+            "styles": [
+              "apps/angular-demo/src/styles.sass"
+            ],
             "scripts": []
           }
         },
@@ -361,7 +385,9 @@
               "apps/angular-demo/tsconfig.spec.json",
               "apps/angular-demo/e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -391,7 +417,10 @@
               "libs/shared/nav/tsconfig.lib.json",
               "libs/shared/nav/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/nav/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/nav/**/*"
+            ]
           }
         },
         "test": {
@@ -421,7 +450,10 @@
               "libs/angular-lib/lib1/tsconfig.lib.json",
               "libs/angular-lib/lib1/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-lib/lib1/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-lib/lib1/**/*"
+            ]
           }
         },
         "test": {
@@ -451,7 +483,10 @@
               "libs/nx-lib/lib3/tsconfig.lib.json",
               "libs/nx-lib/lib3/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/nx-lib/lib3/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/nx-lib/lib3/**/*"
+            ]
           }
         },
         "test": {
@@ -481,7 +516,10 @@
               "libs/angular-lib/lib2/tsconfig.lib.json",
               "libs/angular-lib/lib2/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-lib/lib2/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-lib/lib2/**/*"
+            ]
           }
         },
         "test": {
@@ -523,7 +561,10 @@
               "libs/nx-lib/foobar/tsconfig.lib.json",
               "libs/nx-lib/foobar/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/nx-lib/foobar/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/nx-lib/foobar/**/*"
+            ]
           }
         },
         "test": {
